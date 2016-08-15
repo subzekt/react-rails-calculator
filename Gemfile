@@ -52,3 +52,5 @@ group :test do
 end
 
 gem 'mongoid', '~> 5.0.0'
+gem 'react-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
