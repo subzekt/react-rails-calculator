@@ -45,3 +45,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'mongoid-rspec', '3.0.0'
+  gem 'capybara'
+end
+
+gem 'mongoid', '~> 5.0.0'
