@@ -2,11 +2,12 @@ class CalculationsController < ApplicationController
   def index
   end
 
+  # GET /calculate
   def calculate
     first_number = params[:first_number]
     second_number = params[:second_number]
     operation_type = params[:operation_type]
-    
+
     # search the database for the identical operation
     # update the count if the operation is present else create a new one
     @calculation = Calculation.find_previous_calculation(first_number, second_number, operation_type)

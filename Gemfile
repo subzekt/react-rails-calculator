@@ -32,10 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -48,9 +45,14 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'mongoid-rspec', '3.0.0'
-  gem 'capybara'
 end
 
 gem 'mongoid', '~> 5.0.0'
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  gem 'jasmine-rails'
+end

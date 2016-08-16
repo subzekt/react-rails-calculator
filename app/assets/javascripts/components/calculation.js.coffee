@@ -105,8 +105,7 @@
           className: 'col-sm-4'
           React.DOM.div
             className: 'form-group'
-            React.DOM.input
-              type: 'textarea'
+            React.DOM.textarea
               name: 'display'
               value: @state.display
               className: 'form-control'

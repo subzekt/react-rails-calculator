@@ -35,7 +35,7 @@ class Calculation
 
 
   def valid_integer(number)
-    number < 100 && number > 0 && (number.to_i == number)
+    number && (number < 100) && (number > 0) && (number.to_i == number)
   end
 
   # search and find if the same calculation was performed earlier
