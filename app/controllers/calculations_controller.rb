@@ -6,7 +6,7 @@ class CalculationsController < ApplicationController
     first_number = params[:first_number]
     second_number = params[:second_number]
     operation_type = params[:operation_type]
-
+    
     # search the database for the identical operation
     # update the count if the operation is present else create a new one
     @calculation = Calculation.find_previous_calculation(first_number, second_number, operation_type)
@@ -24,7 +24,7 @@ class CalculationsController < ApplicationController
     else
       respond_to do |format|
         format.html { render :index }
-        format.json { render json: @calculation.response_data, status: :unprocessable_entity }
+        format.json { render json: "error", status: :unprocessable_entity }
       end
     end
 

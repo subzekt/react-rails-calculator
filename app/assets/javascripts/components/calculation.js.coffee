@@ -24,7 +24,7 @@
     e.preventDefault()
     @setState "can_submit_form": false
     $.ajax
-      method: 'POST'
+      method: 'GET'
       url: "/calculations/calculate"
       data: @state
       dataType: 'JSON'

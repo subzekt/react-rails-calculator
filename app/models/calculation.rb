@@ -22,11 +22,21 @@ class Calculation
   # Validations
   validates_inclusion_of :operation_type, in: OPERATIONS
   validates_presence_of :first_number, :second_number, :operation_type
-
+  validate  :validate_calculation
 
 
   ########################################
   # Methods
+  def validate_calculation
+    unless valid_integer(self.first_number) && valid_integer(self.second_number)
+      errors.add(:base, "invalid data")
+    end
+  end
+
+
+  def valid_integer(number)
+    number < 100 && number > 0 && (number.to_i == number)
+  end
 
   # search and find if the same calculation was performed earlier
   def self.find_previous_calculation(first_number, second_number, operation_type)
@@ -45,15 +55,15 @@ class Calculation
   end
 
   def add
-    self.first_number + self.second_number if self.valid?
+    self.first_number.to_f + self.second_number.to_f if self.valid?
   end
 
   def multiply
-    self.first_number * self.second_number if self.valid?
+    self.first_number.to_f * self.second_number.to_f if self.valid?
   end
 
   def subtract
-    self.first_number - self.second_number if self.valid?
+    self.first_number.to_f - self.second_number.to_f if self.valid?
   end
 
 
